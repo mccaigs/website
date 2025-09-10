@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -9,7 +8,6 @@ import {
   BarChart3, 
   FileText, 
   CheckCircle,
-  Users,
   Building2,
   School,
   ArrowRight,
@@ -27,14 +25,6 @@ const iconMap = {
 };
 
 export function Models() {
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
-  
-  const filteredModels = selectedCategory === 'all' 
-    ? educationalModels 
-    : educationalModels.filter(model => model.category === selectedCategory);
-
-  const categories = ['all', ...Array.from(new Set(educationalModels.map(m => m.category)))];
-
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
