@@ -1,11 +1,11 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { DivideIcon as LucideIcon } from 'lucide-react';
+import { type DivideIcon as LucideIcon } from 'lucide-react';
 
 interface FeatureCardProps {
   title: string;
   description: string;
-  icon: LucideIcon;
+  icon: typeof LucideIcon;
   badge?: string;
   className?: string;
 }
