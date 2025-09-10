@@ -20,14 +20,14 @@ const categoryIcons = {
   'Education Tech': GraduationCap,
   'Case Study': TrendingUp,
   'Updates': BookOpen,
-};
+} as const;
 
 const categoryColors = {
   'AI Trends': 'bg-blue-100 text-blue-800',
   'Education Tech': 'bg-green-100 text-green-800',
   'Case Study': 'bg-orange-100 text-orange-800',
   'Updates': 'bg-purple-100 text-purple-800',
-};
+} as const;
 
 export function Blog() {
   const featuredPosts = blogPosts.filter(post => post.featured);
@@ -88,7 +88,7 @@ export function Blog() {
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {featuredPosts.map((post) => {
-              const CategoryIcon = categoryIcons[post.category];
+              const CategoryIcon = categoryIcons[post.category as keyof typeof categoryIcons];
               return (
                 <Card key={post.id} className="overflow-hidden hover:shadow-xl transition-all duration-300 group">
                   <div className="relative">
@@ -100,7 +100,7 @@ export function Blog() {
                       />
                     </div>
                     <Badge 
-                      className={`absolute top-4 left-4 ${categoryColors[post.category]}`}
+                      className={`absolute top-4 left-4 ${categoryColors[post.category as keyof typeof categoryColors]}`}
                     >
                       <CategoryIcon className="h-3 w-3 mr-1" />
                       {post.category}
@@ -171,7 +171,7 @@ export function Blog() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {regularPosts.map((post) => {
-              const CategoryIcon = categoryIcons[post.category];
+              const CategoryIcon = categoryIcons[post.category as keyof typeof categoryIcons];
               return (
                 <Card key={post.id} className="hover:shadow-lg transition-all duration-300 group">
                   <div className="relative">
@@ -183,7 +183,7 @@ export function Blog() {
                       />
                     </div>
                     <Badge 
-                      className={`absolute top-3 left-3 ${categoryColors[post.category]}`}
+                      className={`absolute top-3 left-3 ${categoryColors[post.category as keyof typeof categoryColors]}`}
                     >
                       <CategoryIcon className="h-3 w-3 mr-1" />
                       {post.category}
@@ -249,12 +249,13 @@ export function Blog() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {Object.entries(categoryIcons).map(([category, IconComponent]) => {
               const postCount = blogPosts.filter(post => post.category === category).length;
+              const categoryKey = category as keyof typeof categoryColors;
               return (
                 <Card key={category} className="text-center hover:shadow-lg transition-shadow cursor-pointer">
                   <CardHeader>
                     <div className="mx-auto mb-4">
-                      <div className={`w-12 h-12 rounded-lg flex items-center justify-center ${categoryColors[category].replace('text-', 'bg-').replace('-800', '-100')}`}>
-                        <IconComponent className={`h-6 w-6 ${categoryColors[category].replace('bg-', 'text-').replace('-100', '-700')}`} />
+                      <div className={`w-12 h-12 rounded-lg flex items-center justify-center ${categoryColors[categoryKey].replace('text-', 'bg-').replace('-800', '-100')}`}>
+                        <IconComponent className={`h-6 w-6 ${categoryColors[categoryKey].replace('bg-', 'text-').replace('-100', '-700')}`} />
                       </div>
                     </div>
                     <CardTitle className="text-lg">{category}</CardTitle>
