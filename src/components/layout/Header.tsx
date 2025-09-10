@@ -72,8 +72,7 @@ export function Header() {
             <SheetContent side="right" className="w-80 bg-white p-6">
               {/* Close button - properly aligned */}
               <div
-                className="absolute top-3 right-3 w-8 h-8 rounded-md flex items-center justify-center cursor-pointer hover:bg-gray-100 transition-colors z-10"
-                className="absolute top-3 right-3 w-10 h-10 rounded-md flex items-center justify-center cursor-pointer transition-colors z-10"
+                className="absolute top-3 right-3 w-10 h-10 rounded-md flex items-center justify-center cursor-pointer hover:bg-gray-100 transition-colors z-10"
                 style={{
                   backgroundColor: '#ffffff',
                   border: '1px solid #d1d5db',
