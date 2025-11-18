@@ -1,0 +1,15 @@
+# McCaigs AI - Robots.txt
+# https://www.mccaigs.ai/robots.txt
+
+User-agent: *
+Allow: /
+
+# Disallow specific bots from private content
+User-agent: GPTBot
+Disallow: /private
+
+# Crawl-delay for all bots
+Crawl-delay: 0
+
+# Sitemap
+Sitemap: https://www.mccaigs.ai/sitemap.xml
