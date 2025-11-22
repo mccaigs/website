@@ -6,7 +6,11 @@ export default function Hero() {
   return (
     <section className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 md:gap-16 lg:gap-20 rounded-3xl bg-card/60 p-8 shadow-soft md:grid-cols-2 md:p-12">
       <div className="space-y-4 md:space-y-6">
-        <h1 className="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight text-brand dark:text-white">AI is in our DNA.</h1>
+        <h1 className="text-4xl md:text-5xl leading-tight tracking-tight text-brand dark:text-white">
+          <span className="font-semibold">AI</span>
+          <span className="font-normal"> is in our </span>
+          <span className="font-semibold">DNA</span>
+        </h1>
         <p className="max-w-2xl text-base md:text-lg text-gray-600 dark:text-gray-400">
           McCaigs AI is the umbrella brand for our ventures across education,
           business automation and research — building privacy-first systems that

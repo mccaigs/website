@@ -47,7 +47,7 @@ export default function WhatWeDoPage() {
         </p>
       </div>
 
-      <div className="space-y-6">
+      <div className="mx-auto max-w-3xl space-y-6">
         {sections.map(({ title, summary, details, icon: Icon }) => (
           <Card key={title} className="card-hover w-full">
             <CardHeader className="space-y-4">
